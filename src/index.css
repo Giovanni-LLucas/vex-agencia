@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Vex Agência Color Palette */
+    --background: 300 50% 3%; /* #0b040c */
+    --foreground: 200 20% 95%;
+    
+    --card: 200 75% 11%; /* #0a3a61 */
+    --card-foreground: 200 20% 95%;
+    
+    --popover: 200 80% 14%; /* #042c40 */
+    --popover-foreground: 200 20% 95%;
+    
+    --primary: 201 74% 50%; /* #2296dc */
+    --primary-foreground: 300 50% 3%;
+    
+    --secondary: 200 75% 27%; /* #0e547c */
+    --secondary-foreground: 200 20% 95%;
+    
+    --muted: 200 80% 14%;
+    --muted-foreground: 200 20% 65%;
+    
+    --accent: 200 75% 21%; /* #0a3a61 */
+    --accent-foreground: 200 20% 95%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 200 50% 20%;
+    --input: 200 50% 15%;
+    --ring: 201 74% 50%;
+    
+    --radius: 0.75rem;
+    
+    /* Custom Vex tokens */
+    --vex-deep: 300 50% 3%;
+    --vex-secondary: 200 75% 27%;
+    --vex-card: 200 75% 21%;
+    --vex-depth: 200 80% 14%;
+    --vex-accent: 201 74% 50%;
+    --vex-glow: 201 74% 50%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(300 50% 3%) 0%, hsl(200 80% 14%) 50%, hsl(200 75% 21%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(201 74% 50%) 0%, hsl(200 75% 27%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(200 75% 21% / 0.8) 0%, hsl(200 80% 14% / 0.6) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(201 74% 50% / 0.15) 0%, transparent 70%);
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(201 74% 50% / 0.3);
+    --shadow-card: 0 8px 32px hsl(300 50% 3% / 0.5);
+    --shadow-button: 0 4px 20px hsl(201 74% 50% / 0.4);
+    
+    /* Sidebar */
+    --sidebar-background: 300 50% 3%;
+    --sidebar-foreground: 200 20% 95%;
+    --sidebar-primary: 201 74% 50%;
+    --sidebar-primary-foreground: 300 50% 3%;
+    --sidebar-accent: 200 75% 21%;
+    --sidebar-accent-foreground: 200 20% 95%;
+    --sidebar-border: 200 50% 20%;
+    --sidebar-ring: 201 74% 50%;
+  }
+
+  .dark {
+    --background: 300 50% 3%;
+    --foreground: 200 20% 95%;
+    --card: 200 75% 11%;
+    --card-foreground: 200 20% 95%;
+    --popover: 200 80% 14%;
+    --popover-foreground: 200 20% 95%;
+    --primary: 201 74% 50%;
+    --primary-foreground: 300 50% 3%;
+    --secondary: 200 75% 27%;
+    --secondary-foreground: 200 20% 95%;
+    --muted: 200 80% 14%;
+    --muted-foreground: 200 20% 65%;
+    --accent: 200 75% 21%;
+    --accent-foreground: 200 20% 95%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 200 20% 95%;
+    --border: 200 50% 20%;
+    --input: 200 50% 15%;
+    --ring: 201 74% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Glow effects */
+  .glow-accent {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 30px hsl(var(--vex-accent) / 0.5);
+  }
+  
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--vex-accent)) 0%, hsl(200 60% 70%) 100%);
+  }
+  
+  /* Card glass effect */
+  .glass-card {
+    @apply backdrop-blur-xl border border-border/30;
+    background: linear-gradient(180deg, hsl(var(--vex-card) / 0.6) 0%, hsl(var(--vex-depth) / 0.4) 100%);
+  }
+  
+  /* Animated gradient background */
+  .animated-gradient {
+    background: linear-gradient(-45deg, 
+      hsl(var(--vex-deep)), 
+      hsl(var(--vex-depth)), 
+      hsl(var(--vex-card)), 
+      hsl(var(--vex-secondary))
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+  
+  /* Grid pattern overlay */
+  .grid-pattern {
+    background-image: 
+      linear-gradient(hsl(var(--vex-accent) / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--vex-accent) / 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  
+  /* Dot pattern */
+  .dot-pattern {
+    background-image: radial-gradient(hsl(var(--vex-accent) / 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+  
+  /* Section divider glow */
+  .section-glow {
+    position: relative;
+  }
+  
+  .section-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--vex-accent) / 0.5), transparent);
+  }
+  
+  /* Button glow animation */
+  .btn-glow {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-glow::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, hsl(var(--vex-accent)), hsl(var(--vex-secondary)));
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .btn-glow:hover::before {
+    opacity: 1;
+  }
+  
+  /* Floating animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  /* Pulse glow animation */
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Keyframe animations */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { 
+    box-shadow: 0 0 20px hsl(var(--vex-accent) / 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 40px hsl(var(--vex-accent) / 0.6);
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--vex-deep));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--vex-secondary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--vex-accent));
+}
