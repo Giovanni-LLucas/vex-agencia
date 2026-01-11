@@ -28,7 +28,7 @@ const Services = () => {
       title: "Landing Pages",
       subtitle: "Alta Conversão",
       tagline: "Páginas que vendem enquanto você dorme",
-      description: "Criamos landing pages estratégicas com foco obsessivo em conversão. Design persuasivo, copy que conecta, e performance otimizada para transformar visitantes em clientes.",
+      description: "Criamos landing pages estratégicas com foco obsessivo em conversão. Design persuasivo, copy que conecta e performance otimizada para transformar visitantes em clientes.",
       features: [
         { icon: Target, text: "UX focado em conversão" },
         { icon: Zap, text: "Carregamento ultra-rápido" },
@@ -44,7 +44,7 @@ const Services = () => {
       title: "Gestão de Tráfego",
       subtitle: "Performance & Escala",
       tagline: "Seu investimento trabalhando 24/7",
-      description: "Gerenciamos suas campanhas no Meta Ads e Google Ads com estratégia data-driven. Otimização diária, relatórios claros, e escala previsível para seu negócio.",
+      description: "Gerenciamos suas campanhas no Meta Ads, Otimização diária, relatórios claros e escala previsível para seu negócio.",
       features: [
         { icon: BarChart3, text: "Análise de dados em tempo real" },
         { icon: Settings, text: "Otimização contínua de campanhas" },

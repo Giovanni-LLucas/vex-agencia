@@ -63,7 +63,7 @@ const Differentiators = () => {
           className="text-center mb-16"
         >
           <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 block">
-            Por que a Vex
+            Por que a Vex?
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6">
             O que nos torna{" "}

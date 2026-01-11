@@ -88,7 +88,7 @@ const CTA = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3"
               >
-                Falar com especialista agora
+                Quero escalar meu negócio!
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>

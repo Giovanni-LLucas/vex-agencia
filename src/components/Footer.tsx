@@ -24,7 +24,6 @@ const Footer = () => {
       title: "Empresa",
       links: [
         { name: "Sobre nós", href: "#" },
-        { name: "Resultados", href: "#results" },
         { name: "Contato", href: "#contact" },
       ],
     },
