@@ -99,6 +99,17 @@ const Footer = () => {
           <p className="text-sm text-muted-foreground">
             © {currentYear} Vex Agência. Todos os direitos reservados.
           </p>
+          <p className="text-sm text-muted-foreground">
+            Desenvolvido por{" "}
+            <a 
+              href="https://www.instagram.com/giovanni_llucas/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary hover:underline transition-all"
+            >
+              Giovanni Lucas
+            </a>
+          </p>
         </div>
       </div>
     </footer>
